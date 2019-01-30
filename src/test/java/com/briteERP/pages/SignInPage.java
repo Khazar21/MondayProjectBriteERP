@@ -20,8 +20,16 @@ public class SignInPage {
     public WebElement password;
     @FindBy(xpath = "//button[.='Log in']")
     public WebElement loginButton;
+    @FindBy(className = "alert alert-danger")
+    public WebElement errorMessage;
 
 
+
+      public void signIn(){
+    email.sendKeys(ConfigurationReader.getProperty("emailLunchInvoicingManager"));
+    password.sendKeys(ConfigurationReader.getProperty("passwordLunchInvoicingManager"));
+    loginButton.click();
+}
 
 
 

@@ -7,11 +7,12 @@ import org.testng.asserts.SoftAssert;
 
 import java.util.concurrent.TimeUnit;
 
-public abstract  class TestBase {
+public abstract class TestBase {
 
      protected WebDriver driver;
      protected Actions actions;
      protected SoftAssert softAssert;
+     protected Pages pages;
 
 
 
@@ -21,6 +22,8 @@ public abstract  class TestBase {
          driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
          actions= new Actions(driver);
          softAssert= new SoftAssert();
+         pages= new Pages();
+         driver.get(ConfigurationReader.getProperty("url"));
      }
 
      @AfterMethod
