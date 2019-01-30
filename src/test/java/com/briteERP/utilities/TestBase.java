@@ -7,8 +7,7 @@ import org.testng.asserts.SoftAssert;
 
 import java.util.concurrent.TimeUnit;
 
-public  class TestBase {
-    private TestBase(){}
+public abstract  class TestBase {
 
      protected WebDriver driver;
      protected Actions actions;
@@ -26,7 +25,7 @@ public  class TestBase {
 
      @AfterMethod
     public void tearDown(){
-         Driver.closeDriver();
+       //  Driver.closeDriver();
          softAssert.assertAll();
      }
 
