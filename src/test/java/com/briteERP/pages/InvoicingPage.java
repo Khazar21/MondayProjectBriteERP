@@ -97,4 +97,8 @@ public class InvoicingPage {
     public WebElement pieChart;
     @FindBy(xpath = "//ol[@class='breadcrumb']//li")
     public WebElement pageHeader;
+    @FindBy(xpath = "//span[.='Cancel']/..")
+    public WebElement cancelButton;
+    @FindBy(tagName = "h4")
+    public WebElement popUpWindowHeader;
 }
