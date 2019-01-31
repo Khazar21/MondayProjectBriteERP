@@ -95,4 +95,6 @@ public class InvoicingPage {
     public WebElement lineChart;
     @FindBy(xpath = "//button[@data-mode='pie']")
     public WebElement pieChart;
+    @FindBy(xpath = "//ol[@class='breadcrumb']//li")
+    public WebElement pageHeader;
 }
