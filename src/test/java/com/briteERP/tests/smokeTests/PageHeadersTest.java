@@ -10,7 +10,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class PageHeadersTest extends TestBase {
-    @Test
+    @Test (groups = "smoke")
     public void pageHeaders(){
         extentLogger= report.createTest("Page Headers Test");
 
@@ -155,5 +155,7 @@ public class PageHeadersTest extends TestBase {
         BrowserUtilities.waitForTitleContains("Acquirers");
         extentLogger.info("Verifying page header- Payment Acquirers");
         Assert.assertEquals(pages.invoicingPage.pageHeader.getText(), ApplicationConstants.PAYMENT_ACQUIRERS);
+        extentLogger.info("PASSED: Page Headers Test");
+
     }
 }

@@ -23,7 +23,7 @@ public abstract class TestBase {
     private static ExtentHtmlReporter htmlReporter;
     protected static ExtentTest extentLogger;
 
-    @BeforeTest
+    @BeforeTest (alwaysRun = true)
     public void setUpTest(){
         report= new ExtentReports();
         // this is our custom location of the report that will be generated
@@ -43,7 +43,7 @@ public abstract class TestBase {
 
 //        htmlReporter.config().setTheme(Theme.DARK);
     }
-    @BeforeMethod
+    @BeforeMethod (alwaysRun = true)
     public void setup(){
          driver= Driver.getDriver();
          driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
@@ -52,7 +52,7 @@ public abstract class TestBase {
          pages= new Pages();
          driver.get(ConfigurationReader.getProperty("url"));
      }
-     @AfterMethod
+     @AfterMethod (alwaysRun = true)
     public void tearDown(ITestResult result) throws IOException {
          // if any test fails, it can detect it,
          // take a screen shot at the point and attach to report
@@ -68,7 +68,7 @@ public abstract class TestBase {
          Driver.closeDriver();
          softAssert.assertAll();
      }
-    @AfterTest
+    @AfterTest (alwaysRun = true)
     public void tearDownTest(){
         report.flush();
     }
