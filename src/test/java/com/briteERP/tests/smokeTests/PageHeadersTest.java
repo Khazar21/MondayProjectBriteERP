@@ -16,8 +16,8 @@ public class PageHeadersTest extends TestBase {
 
         extentLogger.info("Selecting database");
         pages.odooPage.briteERPDemo.click();
-        extentLogger.info("Signing in");
-        pages.signInPage.signIn();
+        extentLogger.info("Signing in as a Manager");
+        pages.signInPage.signIn("manager");
         BrowserUtilities.waitForClickablility(pages.menuUser.invoicing);
         extentLogger.info("Going to the Invoicing Page");
         pages.menuUser.invoicing.click();

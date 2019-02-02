@@ -9,10 +9,11 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.Set;
 
 public class SignInPage {
-    public SignInPage(){
-        PageFactory.initElements(Driver.getDriver(),this);
+    public SignInPage() {
+        PageFactory.initElements(Driver.getDriver(), this);
     }
-    @FindBy(xpath ="//a[@class='btn btn-default']")
+
+    @FindBy(xpath = "//a[@class='btn btn-default']")
     public WebElement selectDataBase;
     @FindBy(id = "login")
     public WebElement email;
@@ -24,13 +25,15 @@ public class SignInPage {
     public WebElement errorMessage;
 
 
-
-      public void signIn(){
-    email.sendKeys(ConfigurationReader.getProperty("emailLunchInvoicingManager"));
-    password.sendKeys(ConfigurationReader.getProperty("passwordLunchInvoicingManager"));
-    loginButton.click();
-}
-
-
-
+    public void signIn(String user) {
+        if (user.equalsIgnoreCase("manager")) {
+            email.sendKeys(ConfigurationReader.getProperty("emailLunchInvoicingManager"));
+            password.sendKeys(ConfigurationReader.getProperty("passwordLunchInvoicingManager"));
+            loginButton.click();
+        } else if (user.equalsIgnoreCase("user")) {
+            email.sendKeys(ConfigurationReader.getProperty("emailLunchInvoicingUser"));
+            password.sendKeys(ConfigurationReader.getProperty("passwordLunchInvoicingUser"));
+            loginButton.click();
+        }
+    }
 }
