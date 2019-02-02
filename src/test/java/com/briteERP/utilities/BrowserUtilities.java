@@ -39,5 +39,9 @@ public class BrowserUtilities {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 15);
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
+    public static void waitForAttributeToContain(WebElement webElement, String attribute, String value){
+        WebDriverWait wait= new WebDriverWait(Driver.getDriver(),15);
+        wait.until(ExpectedConditions.attributeContains(webElement,attribute, value));
+    }
 
 }

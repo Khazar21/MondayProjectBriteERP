@@ -21,11 +21,11 @@ public class SignInPage {
     public WebElement password;
     @FindBy(xpath = "//button[.='Log in']")
     public WebElement loginButton;
-    @FindBy(className = "alert alert-danger")
+    @FindBy(xpath = "//p[@class='alert alert-danger']")
     public WebElement errorMessage;
 
 
-    public void signIn(String user) {
+    public void signIn(String user){
         if (user.equalsIgnoreCase("manager")) {
             email.sendKeys(ConfigurationReader.getProperty("emailLunchInvoicingManager"));
             password.sendKeys(ConfigurationReader.getProperty("passwordLunchInvoicingManager"));
@@ -33,6 +33,18 @@ public class SignInPage {
         } else if (user.equalsIgnoreCase("user")) {
             email.sendKeys(ConfigurationReader.getProperty("emailLunchInvoicingUser"));
             password.sendKeys(ConfigurationReader.getProperty("passwordLunchInvoicingUser"));
+            loginButton.click();
+        }else if (user.equalsIgnoreCase("invalidemail")) {
+            email.sendKeys(ConfigurationReader.getProperty("invalidEmail"));
+            password.sendKeys(ConfigurationReader.getProperty("passwordLunchInvoicingManager"));
+            loginButton.click();
+        } else if (user.equalsIgnoreCase("invalidpassword")) {
+            email.sendKeys(ConfigurationReader.getProperty("emailLunchInvoicingManager"));
+            password.sendKeys(ConfigurationReader.getProperty("invalidPassword"));
+            loginButton.click();
+        } else if (user.equalsIgnoreCase("invalidboth")) {
+            email.sendKeys(ConfigurationReader.getProperty("invalidEmail"));
+            password.sendKeys(ConfigurationReader.getProperty("invalidPassword"));
             loginButton.click();
         }
     }
