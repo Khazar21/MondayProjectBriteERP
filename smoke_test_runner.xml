@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="BriteERP" verbose="2">
+
+    <test name="BriteERP Automated Tests">
+        <classes>
+            <class name="com.briteERP.tests.smokeTests.PageHeadersTest"></class>
+        </classes>
+    </test>
+
+</suite>
