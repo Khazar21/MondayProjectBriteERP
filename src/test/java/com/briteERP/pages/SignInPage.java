@@ -9,24 +9,21 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.Set;
 
 public class SignInPage {
-    public SignInPage(){
-        PageFactory.initElements(Driver.getDriver(),this);
+    public SignInPage() {
+        PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(xpath ="//a[@class='btn btn-default']")
+    @FindBy(xpath = "//a[@class='btn btn-default']")
     public WebElement selectDataBase;
-
     @FindBy(id = "login")
     public WebElement email;
-
     @FindBy(id = "password")
     public WebElement password;
-
     @FindBy(xpath = "//button[.='Log in']")
     public WebElement loginButton;
-
-    @FindBy(className = "alert alert-danger")
+    @FindBy(xpath = "//p[@class='alert alert-danger']")
     public WebElement errorMessage;
+
 
     public void signIn(String user){
         if (user.equalsIgnoreCase("manager")) {
@@ -51,9 +48,4 @@ public class SignInPage {
             loginButton.click();
         }
     }
-
-
-
-
-
 }

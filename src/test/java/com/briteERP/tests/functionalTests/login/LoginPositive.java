@@ -1,11 +1,10 @@
 package com.briteERP.tests.functionalTests.login;
 
-import com.briteERP.utilities.ApplicationConstants;
 import com.briteERP.utilities.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class LoginPositive extends TestBase {
+public class LoginPositive extends TestBase{
     @Test(groups = {"regression", "smoke"})
     public void positiveLoginManager(){
         extentLogger= report.createTest("Positive Login as a Manager");
@@ -30,6 +29,4 @@ public class LoginPositive extends TestBase {
         Assert.assertTrue(driver.getTitle().contains("Odoo"));
         extentLogger.info("PASSED- Positive Login Test");
     }
-
-
 }

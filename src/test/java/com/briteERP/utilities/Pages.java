@@ -11,13 +11,11 @@ public class Pages {
     public SignInPage signInPage;
 
     public Pages(){
-        homePage = new HomePage();
-        invoicingPage = new InvoicingPage();
-        menuGeneral = new MenuGeneral();
-        menuUser = new MenuUser();
-        odooPage = new OdooPage();
-        signInPage = new SignInPage();
-
-
+        homePage= new HomePage();
+        invoicingPage= new InvoicingPage();
+        menuGeneral= new MenuGeneral();
+        menuUser= new MenuUser();
+        odooPage= new OdooPage();
+        signInPage= new SignInPage();
     }
 }

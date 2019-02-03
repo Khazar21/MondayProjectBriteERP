@@ -1,14 +1,17 @@
 package com.briteERP.tests.functionalTests.invoicing.sales;
 
 import com.briteERP.utilities.BrowserUtilities;
+import com.briteERP.utilities.Driver;
 import com.briteERP.utilities.TestBase;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class CustomerInvoices extends TestBase {
+
     @Test
     public void searchBoxDefault() {
-
         extentLogger = report.createTest("Testing- Search...is displayed by default");
 
         extentLogger.info("Choosing the database");
@@ -26,7 +29,6 @@ public class CustomerInvoices extends TestBase {
 
     @Test
     public void invoicesListingAsList() {
-
         extentLogger = report.createTest("Testing- Invoices are listed as list format by default");
 
         extentLogger.info("Choosing the database");
@@ -44,7 +46,6 @@ public class CustomerInvoices extends TestBase {
 
     @Test
     public void invoicesListingAsKanban() {
-
         extentLogger = report.createTest("Testing- Invoices are listed as kanban");
 
         extentLogger.info("Choosing the database");
@@ -65,7 +66,6 @@ public class CustomerInvoices extends TestBase {
 
     @Test
     public void invoicesListingInCalendar() {
-
         extentLogger = report.createTest("Testing- Invoices are listed in calendar");
 
         extentLogger.info("Choosing the database");

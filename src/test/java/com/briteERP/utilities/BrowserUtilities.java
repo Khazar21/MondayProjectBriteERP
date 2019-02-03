@@ -13,6 +13,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class BrowserUtilities {
+
     public static String getScreenshot(String name) {
         // name the screenshot with current date-time to avoid duplicate naming
         String time = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
@@ -31,15 +32,16 @@ public class BrowserUtilities {
     }
 
     public static void waitForTitleContains(String word){
-        WebDriverWait wait= new WebDriverWait(Driver.getDriver(),90);
+        WebDriverWait wait= new WebDriverWait(Driver.getDriver(),15);
         wait.until(ExpectedConditions.titleContains(word));
     }
     public static void waitForClickablility(WebElement element) {
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 90);
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 15);
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
     public static void waitForAttributeToContain(WebElement webElement, String attribute, String value){
-        WebDriverWait wait= new WebDriverWait(Driver.getDriver(),90);
+        WebDriverWait wait= new WebDriverWait(Driver.getDriver(),15);
         wait.until(ExpectedConditions.attributeContains(webElement,attribute, value));
     }
+
 }

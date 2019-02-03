@@ -9,8 +9,6 @@ public class MenuUser {
     public MenuUser(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
-
     @FindBy(xpath = "//span[@class='oe_menu_text' and contains(text(),'Invoicing')]/..")
     public WebElement invoicing;
-
 }

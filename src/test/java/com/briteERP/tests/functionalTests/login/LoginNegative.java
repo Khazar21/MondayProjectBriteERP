@@ -42,4 +42,5 @@ public class LoginNegative extends TestBase {
         Assert.assertEquals(pages.signInPage.errorMessage.getText(), ApplicationConstants.LOGIN_ERROR_MESSAGE);
         extentLogger.info("PASSED Negative Login Test With Invalid Password");
     }
+
 }

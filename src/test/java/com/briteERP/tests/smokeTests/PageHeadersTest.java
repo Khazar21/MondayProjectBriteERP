@@ -2,12 +2,14 @@ package com.briteERP.tests.smokeTests;
 
 import com.briteERP.utilities.ApplicationConstants;
 import com.briteERP.utilities.BrowserUtilities;
+import com.briteERP.utilities.Driver;
 import com.briteERP.utilities.TestBase;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class PageHeadersTest extends TestBase {
-
     @Test (groups = "smoke")
     public void pageHeaders(){
         extentLogger= report.createTest("Page Headers Test");
