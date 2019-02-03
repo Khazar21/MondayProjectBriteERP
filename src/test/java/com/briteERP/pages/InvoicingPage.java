@@ -101,4 +101,9 @@ public class InvoicingPage {
     public WebElement cancelButton;
     @FindBy(tagName = "h4")
     public WebElement popUpWindowHeader;
+    @FindBy(xpath = "//div[@class='o_facet_values']")
+    public WebElement canbesold;
+    @FindBy(xpath = "(//img[@modifiers='{}'])[1]")
+    public WebElement pictureRandom;
+
 }
