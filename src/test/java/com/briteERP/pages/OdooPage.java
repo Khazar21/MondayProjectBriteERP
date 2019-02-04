@@ -9,10 +9,13 @@ public class OdooPage {
     public OdooPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
+
     @FindBy(xpath = "(//a[contains(text(),'Demo')]/../a)[1]")
     public WebElement briteERP;
+
     @FindBy(xpath = "//a[contains(text(),'Demo')]")
     public WebElement briteERPDemo;
+
     @FindBy(xpath = "//a[contains(text(),'Test')]")
     public WebElement test;
 }

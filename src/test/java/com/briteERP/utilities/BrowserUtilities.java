@@ -48,5 +48,9 @@ public class BrowserUtilities {
         WebDriverWait wait= new WebDriverWait(Driver.getDriver(),90                                                                                                                         );
         wait.until(ExpectedConditions.attributeContains(webElement,attribute, value));
     }
+    public static void waitForElementToBoVisible(WebElement webElement){
+        WebDriverWait wait= new WebDriverWait(Driver.getDriver(),15);
+        wait.until(ExpectedConditions.visibilityOf(webElement));
+    }
 
 }
