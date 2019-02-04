@@ -16,12 +16,16 @@ public class CustomerInvoices extends TestBase {
 
         extentLogger.info("Choosing the database");
         pages.odooPage.briteERPDemo.click();
+
         extentLogger.info("Signing in as a Manager");
         pages.signInPage.signIn("manager");
+
         BrowserUtilities.waitForClickablility(pages.menuUser.invoicing);
+
         extentLogger.info("Going to the Invoicing Page");
         pages.menuUser.invoicing.click();
         BrowserUtilities.waitForTitleContains("Invoices");
+
         extentLogger.info("Verifying- Search... is displayed by default");
         Assert.assertEquals(pages.invoicingPage.searchInput.getAttribute("placeholder"), "Search...");
         extentLogger.info("PASSED- Search... is displayed by default");
@@ -55,6 +59,7 @@ public class CustomerInvoices extends TestBase {
         BrowserUtilities.waitForClickablility(pages.menuUser.invoicing);
         extentLogger.info("Going to the Invoicing Page");
         pages.menuUser.invoicing.click();
+
         BrowserUtilities.waitForTitleContains("Invoices");
         extentLogger.info("clicking on to kanbanView button");
         pages.invoicingPage.kanbanView.click();
@@ -83,4 +88,5 @@ public class CustomerInvoices extends TestBase {
         Assert.assertTrue(pages.invoicingPage.calendarView.getAttribute("class").contains("active"));
         extentLogger.info("PASSED- Calendar Format Button Is Selected");
     }
+
 }
