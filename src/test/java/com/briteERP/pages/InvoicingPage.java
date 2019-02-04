@@ -109,5 +109,9 @@ public class InvoicingPage {
     public WebElement paymentMethodsManualCB;
     @FindBy(xpath = "//label[.='Checks']/..//input")
     public WebElement paymentMethodsChecksCB;
+    @FindBy(xpath = "//div[@class='o_facet_values']")
+    public WebElement canbesold;
+    @FindBy(xpath = "(//img[@modifiers='{}'])[1]")
+    public WebElement pictureRandom;
 
 }

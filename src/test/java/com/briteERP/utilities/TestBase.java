@@ -45,8 +45,10 @@ public abstract class TestBase {
     }
     @BeforeMethod (alwaysRun = true)
     public void setup(){
+
          driver= Driver.getDriver();
          driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+         driver.manage().window().maximize();
          actions= new Actions(driver);
          softAssert= new SoftAssert();
          pages= new Pages();
