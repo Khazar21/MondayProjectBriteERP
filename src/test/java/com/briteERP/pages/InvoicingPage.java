@@ -73,6 +73,16 @@ public class InvoicingPage {
     public WebElement searchInput;
     @FindBy(xpath = "//button[contains(text(),'Create')]")
     public WebElement createButton;
+    @FindBy(xpath = "//div[@class='o_form_sheet']")
+    public WebElement draftCreditNoteSheet ;
+    @FindBy(xpath = "//table[@class='o_group o_inner_group o_group_col_6']//input[@id='o_field_input_245'] ")
+    public WebElement draftCreditNoteVendor ;
+    @FindBy(css = ".o_form_sheet")
+    public WebElement paymentSheet ;
+    @FindBy(css = ".o_form_sheet input[id=\"o_field_input_256\"]")
+    public WebElement paymentDate ;
+    @FindBy(id = "ui-id-47")
+    public WebElement draftCreditNoteVendor1 ;
     @FindBy(xpath = "//button[contains(text(),'Import')]")
     public WebElement importButton;
     @FindBy(xpath = "//button[@data-view-type='list']")
@@ -105,6 +115,17 @@ public class InvoicingPage {
     public WebElement checkAllBox;
     @FindBy(xpath = "//button[contains(text(), 'Action')]")
     public WebElement actionDropdown;
-
+    @FindBy(xpath = "(//label[.='Electronic']/../..//input)[1]")
+    public WebElement debitMethodsManualCB;
+    @FindBy(xpath = "//label[.='Electronic']/..//input")
+    public WebElement debitMethodsElectronicCB;
+    @FindBy(xpath = "//label[.='Checks']/../..//input")
+    public WebElement paymentMethodsManualCB;
+    @FindBy(xpath = "//label[.='Checks']/..//input")
+    public WebElement paymentMethodsChecksCB;
+    @FindBy(xpath = "//div[@class='o_facet_values']")
+    public WebElement canbesold;
+    @FindBy(xpath = "(//img[@modifiers='{}'])[1]")
+    public WebElement pictureRandom;
 
 }

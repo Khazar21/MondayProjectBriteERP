@@ -1,11 +1,11 @@
-package com.briteERP.tests.functionalTests.invoicing.sales;
+package com.briteERP.tests.functionalTests.invoicing.purchases.documents;
 
 import com.briteERP.utilities.BrowserUtilities;
 import com.briteERP.utilities.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class CustomerInvoices extends TestBase {
+public class VendorBills extends TestBase {
 
 
     @Test
@@ -19,13 +19,21 @@ public class CustomerInvoices extends TestBase {
         extentLogger.info("Going to the Invoicing Page");
         pages.menuUser.invoicing.click();
         BrowserUtilities.waitForTitleContains("Invoices");
+        extentLogger.info("Clicking on Purchase Documents");
+        pages.invoicingPage.purchasesDocuments.click();
+        extentLogger.info("Clicking on Vendor Bills");
+        pages.invoicingPage.vendorBills.click();
         extentLogger.info("Verifying- Search... is displayed by default");
         Assert.assertEquals(pages.invoicingPage.searchInput.getAttribute("placeholder"), "Search...");
         extentLogger.info("PASSED- Search... is displayed by default");
+
     }
+
+
     @Test
-    public void invoicesListingAsList() {
-        extentLogger = report.createTest("Testing- Invoices are listed as list format by default");
+
+    public void vendorBilsAsList(){
+        extentLogger = report.createTest("Testing- VendorBils are listed as list format by default");
         extentLogger.info("Choosing the database");
         pages.odooPage.briteERPDemo.click();
         extentLogger.info("Signing in as a Manager");
@@ -34,13 +42,19 @@ public class CustomerInvoices extends TestBase {
         extentLogger.info("Going to the Invoicing Page");
         pages.menuUser.invoicing.click();
         BrowserUtilities.waitForTitleContains("Invoices");
+        extentLogger.info("Clicking on Purchase Documents");
+        pages.invoicingPage.purchasesDocuments.click();
+        extentLogger.info("Clicking on Vendor Bills");
+        pages.invoicingPage.vendorBills.click();
         extentLogger.info("Verifying- list button are selected by default");
         Assert.assertTrue(pages.invoicingPage.listView.getAttribute("class").contains("active"));
         extentLogger.info("PASSED- - List Format Button Is Selected");
+
     }
+
     @Test
-    public void invoicesListingAsKanban() {
-        extentLogger = report.createTest("Testing- Invoices are listed as kanban");
+    public void vendorsListingAsKanban() {
+        extentLogger = report.createTest("Testing- VendorBills are listed as list format by default");
         extentLogger.info("Choosing the database");
         pages.odooPage.briteERPDemo.click();
         extentLogger.info("Signing in as a Manager");
@@ -49,6 +63,10 @@ public class CustomerInvoices extends TestBase {
         extentLogger.info("Going to the Invoicing Page");
         pages.menuUser.invoicing.click();
         BrowserUtilities.waitForTitleContains("Invoices");
+        extentLogger.info("Clicking on Purchase Documents");
+        pages.invoicingPage.purchasesDocuments.click();
+        extentLogger.info("Clicking on Vendor Bills");
+        pages.invoicingPage.vendorBills.click();
         extentLogger.info("clicking on to kanbanView button");
         pages.invoicingPage.kanbanView.click();
         extentLogger.info("Verifying- kanban button are selected");
@@ -56,9 +74,10 @@ public class CustomerInvoices extends TestBase {
         Assert.assertTrue(pages.invoicingPage.kanbanView.getAttribute("class").contains("active"));
         extentLogger.info("PASSED- - Kanban Format Button Is Selected");
     }
+
     @Test
     public void invoicesListingInCalendar() {
-        extentLogger = report.createTest("Testing- Invoices are listed in calendar");
+        extentLogger = report.createTest("Testing- VendorBills are listed in calendar");
         extentLogger.info("Choosing the database");
         pages.odooPage.briteERPDemo.click();
         extentLogger.info("Signing in as a Manager");
@@ -67,6 +86,10 @@ public class CustomerInvoices extends TestBase {
         extentLogger.info("Going to the Invoicing Page");
         pages.menuUser.invoicing.click();
         BrowserUtilities.waitForTitleContains("Invoices");
+        extentLogger.info("Clicking on Purchase Documents");
+        pages.invoicingPage.purchasesDocuments.click();
+        extentLogger.info("Clicking on Vendor Bills");
+        pages.invoicingPage.vendorBills.click();
         extentLogger.info("clicking on to calendarView button");
         pages.invoicingPage.calendarView.click();
         extentLogger.info("Verifying- calendar button are selected");
@@ -75,3 +98,7 @@ public class CustomerInvoices extends TestBase {
         extentLogger.info("PASSED- Calendar Format Button Is Selected");
     }
 }
+
+
+
+
