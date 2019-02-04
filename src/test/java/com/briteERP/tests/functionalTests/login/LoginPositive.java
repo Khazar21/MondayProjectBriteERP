@@ -5,7 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class LoginPositive extends TestBase{
-    @Test(groups = {"regression", "smoke"})
+    @Test(groups = "regression")
     public void positiveLoginManager(){
         extentLogger= report.createTest("Positive Login as a Manager");
 
@@ -17,7 +17,7 @@ public class LoginPositive extends TestBase{
         Assert.assertTrue(driver.getTitle().contains("Odoo"));
         extentLogger.info("PASSED- Positive Login Test");
     }
-    @Test(groups = {"regression", "smoke"})
+    @Test(groups = "regression")
     public void positiveLoginUser(){
         extentLogger= report.createTest("Positive Login as a User");
 

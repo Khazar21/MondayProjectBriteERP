@@ -6,7 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class LoginNegative extends TestBase {
-    @Test(groups = {"regression", "smoke"})
+    @Test(groups = "regression")
     public void LoginInvalidCredentials(){
         extentLogger= report.createTest("Negative Login With Invalid Credentials");
 
