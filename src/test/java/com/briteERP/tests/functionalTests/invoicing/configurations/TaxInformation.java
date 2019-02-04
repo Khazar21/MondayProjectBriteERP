@@ -1,4 +1,4 @@
-package com.briteERP.tests.functionalTests.invoicing.configuration;
+package com.briteERP.tests.functionalTests.invoicing.configurations;
 
 import com.briteERP.utilities.BrowserUtilities;
 import com.briteERP.utilities.Driver;
@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 
 public class TaxInformation extends TestBase {
 
-    @Test
+    @Test(groups = "regression")
     public void checkboxSelecting() {
         extentLogger = report.createTest("Testing- Checkbox is clikable by default and 'Action' button appears");
         extentLogger.info("Choosing the database");
