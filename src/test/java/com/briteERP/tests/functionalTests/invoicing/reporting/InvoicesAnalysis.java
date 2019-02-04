@@ -16,8 +16,8 @@ public class InvoicesAnalysis extends TestBase {
        extentLogger.info("Choosing the database");
        pages.odooPage.briteERPDemo.click();
        extentLogger.info("Signing in as a Manager");
-        BrowserUtilities.waitForClickablility(pages.menuUser.invoicing);
        pages.signInPage.signIn("manager");
+       BrowserUtilities.waitForClickablility(pages.menuUser.invoicing);
        extentLogger.info("Going to the Invoicing Page");
        pages.menuUser.invoicing.click();
         BrowserUtilities.waitForTitleContains("Invoices");
@@ -39,6 +39,7 @@ public class InvoicesAnalysis extends TestBase {
        pages.odooPage.briteERPDemo.click();
        extentLogger.info("Signing in as a Manager");
        pages.signInPage.signIn("manager");
+       BrowserUtilities.waitForClickablility(pages.menuUser.invoicing);
        extentLogger.info("Going to the Invoicing Page");
        pages.menuUser.invoicing.click();
        BrowserUtilities.waitForTitleContains("Invoices");
@@ -61,6 +62,7 @@ public class InvoicesAnalysis extends TestBase {
         pages.odooPage.briteERPDemo.click();
         extentLogger.info("Signing in as a Manager");
         pages.signInPage.signIn("manager");
+        BrowserUtilities.waitForClickablility(pages.menuUser.invoicing);
         extentLogger.info("Going to the Invoicing Page");
         pages.menuUser.invoicing.click();
         BrowserUtilities.waitForTitleContains("Invoices");
