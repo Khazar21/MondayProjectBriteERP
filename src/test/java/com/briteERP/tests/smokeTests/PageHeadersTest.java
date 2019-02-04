@@ -156,6 +156,5 @@ public class PageHeadersTest extends TestBase {
         extentLogger.info("Verifying page header- Payment Acquirers");
         Assert.assertEquals(pages.invoicingPage.pageHeader.getText(), ApplicationConstants.PAYMENT_ACQUIRERS);
         extentLogger.info("PASSED: Page Headers Test");
-
     }
 }

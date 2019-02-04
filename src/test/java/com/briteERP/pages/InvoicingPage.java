@@ -101,4 +101,8 @@ public class InvoicingPage {
     public WebElement cancelButton;
     @FindBy(tagName = "h4")
     public WebElement popUpWindowHeader;
+    @FindBy(xpath = "(//input[@type='checkbox'])[3]")
+    public WebElement checkAllBox;
+    @FindBy(xpath = "//button[contains(text(), 'Action')]")
+    public WebElement actionDropdown;
 }
