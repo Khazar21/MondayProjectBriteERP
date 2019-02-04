@@ -73,6 +73,16 @@ public class InvoicingPage {
     public WebElement searchInput;
     @FindBy(xpath = "//button[contains(text(),'Create')]")
     public WebElement createButton;
+    @FindBy(xpath = "//div[@class='o_form_sheet']")
+    public WebElement draftCreditNoteSheet ;
+    @FindBy(xpath = "//table[@class='o_group o_inner_group o_group_col_6']//input[@id='o_field_input_245'] ")
+    public WebElement draftCreditNoteVendor ;
+    @FindBy(css = ".o_form_sheet")
+    public WebElement paymentSheet ;
+    @FindBy(css = ".o_form_sheet input[id=\"o_field_input_256\"]")
+    public WebElement paymentDate ;
+    @FindBy(id = "ui-id-47")
+    public WebElement draftCreditNoteVendor1 ;
     @FindBy(xpath = "//button[contains(text(),'Import')]")
     public WebElement importButton;
     @FindBy(xpath = "//button[@data-view-type='list']")
