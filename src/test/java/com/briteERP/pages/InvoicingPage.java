@@ -101,4 +101,13 @@ public class InvoicingPage {
     public WebElement cancelButton;
     @FindBy(tagName = "h4")
     public WebElement popUpWindowHeader;
+    @FindBy(xpath = "(//label[.='Electronic']/../..//input)[1]")
+    public WebElement debitMethodsManualCB;
+    @FindBy(xpath = "//label[.='Electronic']/..//input")
+    public WebElement debitMethodsElectronicCB;
+    @FindBy(xpath = "//label[.='Checks']/../..//input")
+    public WebElement paymentMethodsManualCB;
+    @FindBy(xpath = "//label[.='Checks']/..//input")
+    public WebElement paymentMethodsChecksCB;
+
 }
