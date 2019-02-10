@@ -153,6 +153,10 @@ public class InvoicingPage {
     public WebElement cancelButton;
     @FindBy(tagName = "h4")
     public WebElement popUpWindowHeader;
+    @FindBy(xpath = "(//input[@type='checkbox'])[3]")
+    public WebElement checkAllBox;
+    @FindBy(xpath = "//button[contains(text(), 'Action')]")
+    public WebElement actionDropdown;
     @FindBy(xpath = "(//label[.='Electronic']/../..//input)[1]")
     public WebElement debitMethodsManualCB;
     @FindBy(xpath = "//label[.='Electronic']/..//input")
@@ -165,6 +169,43 @@ public class InvoicingPage {
     public WebElement canbesold;
     @FindBy(xpath = "(//img[@modifiers='{}'])[1]")
     public WebElement pictureRandom;
+    @FindBy(xpath = "//input[@class='o_field_char o_field_widget o_input o_required_modifier']")
+    public WebElement bankAcctName;
+    @FindBy(xpath = "(//input[@class= 'o_input ui-autocomplete-input'])[1]")
+    public WebElement bankAcctDropdown;
+    @FindBy(xpath = "//li[@class = 'o_m2o_dropdown_option ui-menu-item']//a")
+    public WebElement bankAcctSearchMore;
+    @FindBy(xpath = "(//li[@class = 'o_m2o_dropdown_option ui-menu-item']//a)[2]")
+    public WebElement bankAcctCreateAndEdit;
+    @FindBy(xpath = "//button[@class='btn btn-primary btn-sm o_form_button_save']")
+    public WebElement bankAcctSave;
+    @FindBy(xpath = "//span[@class= 'o_field_char o_field_widget o_required_modifier']")
+    public WebElement bankAcctNameDisplay;
+    @FindBy(xpath = "//label[.='Checks']")
+    public WebElement paymentMethodsChecksTxt;
+    @FindBy(xpath = "//label[.='Checks']")
+    public WebElement paymentMethodsManualTxt;
+    @FindBy(xpath = "//h4[.='Search: Bank Account']")
+    public WebElement searchBankAcctTitle;
+    @FindBy(xpath = "//h4[.='Create: Bank Account']")
+    public WebElement createBankAcctTitle;
+    @FindBy(xpath = "//button[@class='close']")
+    public WebElement bankAcctCloseButton;
+    @FindBy(xpath = "(//div[@class='o_field_boolean o_field_widget o_checkbox']/input)[1]")
+    public WebElement manualNumberingCB;
+    @FindBy(xpath = "//label[.='Next Check Number']")
+    public WebElement nextCheckNumberLabel;
+    @FindBy(name = "check_next_number")
+    public WebElement nextCheckNumberDataBox;
+    @FindBy(xpath = "(//table[@class='o_group o_inner_group'][3]//td[2]//input)[1]")
+    public WebElement useInPointOfSaleCB;
+    @FindBy(xpath = "//div[@name= 'pos_mercury_config_id']//input")
+    public WebElement mercuryCredentialsDropdown;
+    @FindBy(xpath = "//h4[@class='modal-title']")
+    public WebElement bankAcctOdooServerError;
+    @FindBy(linkText = "Advanced Settings")
+    public WebElement advancedSettings;
+
 
 
 
