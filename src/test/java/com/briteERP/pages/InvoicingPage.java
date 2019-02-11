@@ -208,14 +208,12 @@ public class InvoicingPage {
 
 
 
-
-    public boolean isElementPresent() {
-
+    public boolean elementDisplayed(WebElement element) {
+        // try find it
+        // if cant find it, return false
         try {
-
-            Driver.getDriver().findElement(By.xpath("(//td[@class='o_data_cell o_list_text o_required_modifier']//textarea)[1]"));
-            return true;
-        } catch (NoSuchElementException e) {
+            return element.isDisplayed();
+        } catch (org.openqa.selenium.NoSuchElementException e) {
             return false;
         }
 
