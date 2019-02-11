@@ -1,6 +1,7 @@
 package com.briteERP.utilities;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
@@ -11,6 +12,7 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.NoSuchElementException;
 
 public class BrowserUtilities {
 
@@ -40,17 +42,26 @@ public class BrowserUtilities {
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
-    public static void waitForVisibility(WebElement element) {
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 90);
-        wait.until(ExpectedConditions.visibilityOf(element));
-    }
     public static void waitForAttributeToContain(WebElement webElement, String attribute, String value){
         WebDriverWait wait= new WebDriverWait(Driver.getDriver(),90                                                                                                                         );
         wait.until(ExpectedConditions.attributeContains(webElement,attribute, value));
     }
     public static void waitForElementToBoVisible(WebElement webElement){
-        WebDriverWait wait= new WebDriverWait(Driver.getDriver(),15);
+        WebDriverWait wait= new WebDriverWait(Driver.getDriver(),90);
         wait.until(ExpectedConditions.visibilityOf(webElement));
+
     }
+
+    public static void textToBePresentInElementValue(WebElement webElement) {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 90);
+        wait.until(ExpectedConditions.textToBePresentInElement(webElement, "50.000"));
+
+    }
+
+
+
+
+
+
 
 }

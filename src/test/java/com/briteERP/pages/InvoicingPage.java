@@ -1,14 +1,18 @@
 package com.briteERP.pages;
 
 import com.briteERP.utilities.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.NoSuchElementException;
+
 public class InvoicingPage {
-    public InvoicingPage(){
-        PageFactory.initElements(Driver.getDriver(),this);
+    public InvoicingPage() {
+        PageFactory.initElements(Driver.getDriver(), this);
     }
+
     @FindBy(className = "o_sub_menu_logo")
     public WebElement logo;
     @FindBy(xpath = "//a[@data-menu='201']")
@@ -74,15 +78,53 @@ public class InvoicingPage {
     @FindBy(xpath = "//button[contains(text(),'Create')]")
     public WebElement createButton;
     @FindBy(xpath = "//div[@class='o_form_sheet']")
-    public WebElement draftCreditNoteSheet ;
-    @FindBy(xpath = "//table[@class='o_group o_inner_group o_group_col_6']//input[@id='o_field_input_245'] ")
-    public WebElement draftCreditNoteVendor ;
-    @FindBy(css = ".o_form_sheet")
-    public WebElement paymentSheet ;
-    @FindBy(css = ".o_form_sheet input[id=\"o_field_input_256\"]")
-    public WebElement paymentDate ;
-    @FindBy(id = "ui-id-47")
-    public WebElement draftCreditNoteVendor1 ;
+    public WebElement draftCreditNoteSheet;
+    @FindBy(xpath = "//input[@class='o_input ui-autocomplete-input'][1]")
+    public WebElement draftCreditNoteVendor;
+    @FindBy(xpath = "//div[@class='modal-body']")
+    public WebElement paymentWarningMessage;
+    @FindBy(xpath = "//button[@class='btn btn-primary btn-sm o_list_button_add']")
+    public WebElement paymentCreateButton;
+    @FindBy(xpath = "(//li[@class='ui-menu-item']//a)[13]")
+    public WebElement productComputerCase;
+    @FindBy(xpath = "(//td[@class='o_data_cell o_list_text o_required_modifier']//textarea)[1]")
+    public WebElement productDescription;
+    @FindBy(xpath = "(//td[@class='o_data_cell o_list_number o_required_modifier'])[1]")
+    public WebElement productQuantity;
+    @FindBy(xpath = "(//td[@class='o_data_cell o_list_number o_required_modifier'])[2]")
+    public WebElement productUnitPrice;
+    @FindBy(xpath = "//td[@class='o_data_cell o_list_number o_readonly_modifier']")
+    public WebElement productAmount;
+
+    @FindBy(xpath = "//td[@class='o_list_record_delete']//button")
+    public WebElement productDelete;
+
+    @FindBy(xpath = "(//div[@class='o_radio_item']//input)[3]")
+    public WebElement paymentTypeInternalTransfer;
+
+
+    @FindBy(xpath = "//button[contains(text(),'Discard')]")
+    public WebElement paymentDiscardButton;
+
+    @FindBy(xpath = "//table[@class='o_group o_inner_group o_group_col_6']/../..")
+    public WebElement paymentSheet;
+    @FindBy(xpath = "//input[@name='payment_date']")
+    public WebElement paymentDate;
+    @FindBy(xpath = "//ul[@class='ui-autocomplete ui-front ui-menu ui-widget ui-widget-content']/li[4]/a")
+    public WebElement draftCreditNoteVendor1;
+
+    @FindBy(xpath = "(//td[@class='o_field_x2many_list_row_add']//a)[1]")
+    public WebElement vendorCreditNoteAddAnItem;
+
+    @FindBy(xpath = "//div[@name='product_id']//div")
+    public WebElement addAnItemInput;
+
+    @FindBy(xpath = "(//li[@class='o_m2o_dropdown_option ui-menu-item']//a)[1]")
+    public WebElement searchMore;
+
+    @FindBy(xpath = "(//li[@class='o_m2o_dropdown_option ui-menu-item']//a)[2]")
+    public WebElement creditAndEdit;
+
     @FindBy(xpath = "//button[contains(text(),'Import')]")
     public WebElement importButton;
     @FindBy(xpath = "//button[@data-view-type='list']")
@@ -127,5 +169,57 @@ public class InvoicingPage {
     public WebElement canbesold;
     @FindBy(xpath = "(//img[@modifiers='{}'])[1]")
     public WebElement pictureRandom;
+    @FindBy(xpath = "//input[@class='o_field_char o_field_widget o_input o_required_modifier']")
+    public WebElement bankAcctName;
+    @FindBy(xpath = "(//input[@class= 'o_input ui-autocomplete-input'])[1]")
+    public WebElement bankAcctDropdown;
+    @FindBy(xpath = "//li[@class = 'o_m2o_dropdown_option ui-menu-item']//a")
+    public WebElement bankAcctSearchMore;
+    @FindBy(xpath = "(//li[@class = 'o_m2o_dropdown_option ui-menu-item']//a)[2]")
+    public WebElement bankAcctCreateAndEdit;
+    @FindBy(xpath = "//button[@class='btn btn-primary btn-sm o_form_button_save']")
+    public WebElement bankAcctSave;
+    @FindBy(xpath = "//span[@class= 'o_field_char o_field_widget o_required_modifier']")
+    public WebElement bankAcctNameDisplay;
+    @FindBy(xpath = "//label[.='Checks']")
+    public WebElement paymentMethodsChecksTxt;
+    @FindBy(xpath = "//label[.='Checks']")
+    public WebElement paymentMethodsManualTxt;
+    @FindBy(xpath = "//h4[.='Search: Bank Account']")
+    public WebElement searchBankAcctTitle;
+    @FindBy(xpath = "//h4[.='Create: Bank Account']")
+    public WebElement createBankAcctTitle;
+    @FindBy(xpath = "//button[@class='close']")
+    public WebElement bankAcctCloseButton;
+    @FindBy(xpath = "(//div[@class='o_field_boolean o_field_widget o_checkbox']/input)[1]")
+    public WebElement manualNumberingCB;
+    @FindBy(xpath = "//label[.='Next Check Number']")
+    public WebElement nextCheckNumberLabel;
+    @FindBy(name = "check_next_number")
+    public WebElement nextCheckNumberDataBox;
+    @FindBy(xpath = "(//table[@class='o_group o_inner_group'][3]//td[2]//input)[1]")
+    public WebElement useInPointOfSaleCB;
+    @FindBy(xpath = "//div[@name= 'pos_mercury_config_id']//input")
+    public WebElement mercuryCredentialsDropdown;
+    @FindBy(xpath = "//h4[@class='modal-title']")
+    public WebElement bankAcctOdooServerError;
+    @FindBy(linkText = "Advanced Settings")
+    public WebElement advancedSettings;
+
+
+
+
+    public boolean isElementPresent() {
+
+        try {
+
+            Driver.getDriver().findElement(By.xpath("(//td[@class='o_data_cell o_list_text o_required_modifier']//textarea)[1]"));
+            return true;
+        } catch (NoSuchElementException e) {
+            return false;
+        }
+
+    }
+
 
 }

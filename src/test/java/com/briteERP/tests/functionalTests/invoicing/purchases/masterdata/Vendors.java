@@ -1,4 +1,4 @@
-package com.briteERP.tests.functionalTests.invoicing.purchases.masterdata;
+package com.briteERP.tests.functionalTests.invoicing.purchases.masterData;
 
 import com.briteERP.utilities.BrowserUtilities;
 import com.briteERP.utilities.TestBase;
