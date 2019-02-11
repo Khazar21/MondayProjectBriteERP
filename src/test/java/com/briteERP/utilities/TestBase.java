@@ -53,6 +53,7 @@ public abstract class TestBase {
          softAssert= new SoftAssert();
          pages= new Pages();
          driver.get(ConfigurationReader.getProperty("url"));
+
      }
      @AfterMethod (alwaysRun = true)
     public void tearDown(ITestResult result) throws IOException {
