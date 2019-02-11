@@ -1,4 +1,4 @@
-package com.briteERP.tests.functionalTests.invoicing.configuration;
+package com.briteERP.tests.functionalTests.invoicing.configurations;
 
 import com.briteERP.utilities.BrowserUtilities;
 import com.briteERP.utilities.TestBase;

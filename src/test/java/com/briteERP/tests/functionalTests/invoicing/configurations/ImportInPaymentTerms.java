@@ -1,13 +1,13 @@
-package com.briteERP.tests.functionalTests.invoicing.configuration;
-
+package com.briteERP.tests.functionalTests.invoicing.configurations;
 
 import com.briteERP.utilities.BrowserUtilities;
 import com.briteERP.utilities.TestBase;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class PaymentTerms extends TestBase {
+public class ImportInPaymentTerms extends TestBase {
     @Test
-    public void paymentTerm() throws InterruptedException {
+    public void importPage(){
         extentLogger = report.createTest("is displayed a new page after clicking to the 'Create' button");
 
         extentLogger.info("Choosing the database");
@@ -17,7 +17,7 @@ public class PaymentTerms extends TestBase {
         BrowserUtilities.waitForClickablility(pages.menuUser.invoicing);
         extentLogger.info("Going to the Invoicing Page");
         pages.menuUser.invoicing.click();
-        BrowserUtilities.waitForTitleContains("Invoices");
+//        BrowserUtilities.waitForTitleContains("Invoices");
 
         extentLogger.info("Going to the Configuration Management");
         pages.invoicingPage.configurationManagement.click();
@@ -25,14 +25,19 @@ public class PaymentTerms extends TestBase {
         extentLogger.info("Going to the 'Payment Term' page");
         pages.invoicingPage.paymentTerms.click();
 
-        extentLogger.info("Clicking to 'Import' button");
+        extentLogger.info("Going to 'Import' button");
         pages.configurationPage.importButton.click();
 
-        String path = "C:\\Users\\Toshiba\\Desktop\\delete.xlsx";
-        Thread.sleep(2000);
-        pages.configurationPage.loadFile.sendKeys(path);
+        extentLogger.info("Displaying text message for loading file");
+        Assert.assertTrue(pages.configurationPage.textMsgForLoadFile.isDisplayed());
 
+        extentLogger.info("Displaying text message for 'Help'");
+        pages.configurationPage.helpTextMsg.click();
 
+        extentLogger.info("Displaying text in search box as default");
+        Assert.assertTrue(pages.configurationPage.textInSearchBox.isDisplayed());
 
+        extentLogger.info("Clicking to 'Cancel' button");
+        pages.configurationPage.cancelButton.click();
     }
 }
