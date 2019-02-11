@@ -9,6 +9,7 @@ public class Pages {
     public MenuUser menuUser;
     public OdooPage odooPage;
     public SignInPage signInPage;
+    public ConfigurationPage configurationPage;
 
     public Pages(){
         homePage= new HomePage();
@@ -17,5 +18,6 @@ public class Pages {
         menuUser= new MenuUser();
         odooPage= new OdooPage();
         signInPage= new SignInPage();
+        configurationPage = new ConfigurationPage();
     }
 }
