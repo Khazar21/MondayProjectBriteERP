@@ -105,10 +105,6 @@ public class ConfigurationPage {
     @FindBy(name = "ufile")
     public WebElement addInAttachment;
 
-//    @FindBy(xpath = "//ul[@class='dropdown-menu']/li[1]/a[@data-section='files']//text()")
-//    public WebElement isAddedItem;
-
-
     @FindBy(xpath = "//span[@data-original-title='Delete this attachment']")
     public WebElement deleteAddedItem;
 
