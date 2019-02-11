@@ -205,7 +205,24 @@ public class InvoicingPage {
     public WebElement bankAcctOdooServerError;
     @FindBy(linkText = "Advanced Settings")
     public WebElement advancedSettings;
-
+    @FindBy (xpath = "//input[@name='date_from']")
+    public WebElement startDateInJournalAudit;
+    @FindBy (xpath = "//input[@name='date_to']")
+    public WebElement endDateInJournalAudit;
+    @FindBy (xpath = "//button[@name='check_report']")
+    public WebElement printInJournalAudit;
+    @FindBy (xpath = "//div[@class='o_report_no_edit_mode']")
+    public WebElement lastPrintInJournalAudit;
+    @FindBy (xpath = "//input[@data-value='all']")
+    public WebElement allEntriesInJournalAudit;
+    @FindBy (xpath = "//input[@data-value='date']")
+    public WebElement dateInJournalAudit;
+    @FindBy (xpath = "//input[@name='period_length']")
+    public WebElement periodLengtDaysInAgedPartner;
+    @FindBy (xpath = "//span[contains(text(),'Cancel')]")
+    public WebElement cancelButtonOnTaxReports;
+    @FindBy (xpath = "//ol/li[@class='active']")
+    public WebElement cancelVerifying;
 
 
 
