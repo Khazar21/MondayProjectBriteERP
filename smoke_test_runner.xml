@@ -4,6 +4,7 @@
     <test name="BriteERP Automated Tests">
         <classes>
             <class name="com.briteERP.tests.smokeTests.PageHeadersTest"></class>
+            <class name="com.briteERP.tests.smokeTests.Login"></class>
         </classes>
     </test>
 
