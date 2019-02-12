@@ -205,17 +205,32 @@ public class InvoicingPage {
     public WebElement bankAcctOdooServerError;
     @FindBy(linkText = "Advanced Settings")
     public WebElement advancedSettings;
+    @FindBy (xpath = "//input[@name='date_from']")
+    public WebElement startDateInJournalAudit;
+    @FindBy (xpath = "//input[@name='date_to']")
+    public WebElement endDateInJournalAudit;
+    @FindBy (xpath = "//button[@name='check_report']")
+    public WebElement printInJournalAudit;
+    @FindBy (xpath = "//div[@class='o_report_no_edit_mode']")
+    public WebElement lastPrintInJournalAudit;
+    @FindBy (xpath = "//input[@data-value='all']")
+    public WebElement allEntriesInJournalAudit;
+    @FindBy (xpath = "//input[@data-value='date']")
+    public WebElement dateInJournalAudit;
+    @FindBy (xpath = "//input[@name='period_length']")
+    public WebElement periodLengtDaysInAgedPartner;
+    @FindBy (xpath = "//span[contains(text(),'Cancel')]")
+    public WebElement cancelButtonOnTaxReports;
+    @FindBy (xpath = "//ol/li[@class='active']")
+    public WebElement cancelVerifying;
 
 
-
-
-    public boolean isElementPresent() {
-
+    public boolean elementDisplayed(WebElement element) {
+        // try find it
+        // if cant find it, return false
         try {
-
-            Driver.getDriver().findElement(By.xpath("(//td[@class='o_data_cell o_list_text o_required_modifier']//textarea)[1]"));
-            return true;
-        } catch (NoSuchElementException e) {
+            return element.isDisplayed();
+        } catch (org.openqa.selenium.NoSuchElementException e) {
             return false;
         }
 

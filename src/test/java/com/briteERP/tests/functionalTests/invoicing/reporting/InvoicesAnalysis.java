@@ -51,6 +51,7 @@ public class InvoicesAnalysis extends TestBase {
        pages.invoicingPage.pivotView.click();
        extentLogger.info("Verifying- Pivot is clicked");
        Assert.assertTrue(pages.invoicingPage.pivotView.isEnabled());
+
    }
 
     @Test

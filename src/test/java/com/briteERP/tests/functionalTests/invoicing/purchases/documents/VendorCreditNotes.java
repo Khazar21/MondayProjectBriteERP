@@ -201,13 +201,17 @@ public class VendorCreditNotes extends TestBase {
         BrowserUtilities.waitForClickablility(pages.invoicingPage.productDelete);
         pages.invoicingPage.productDelete.click();
         extentLogger.info("Verifying new value is displayed");
-        BrowserUtilities.waitForElementToBoVisible(pages.invoicingPage.productDescription);
+       // BrowserUtilities.waitForElementToBoVisible(pages.invoicingPage.productDescription);
         System.out.println(pages.invoicingPage.productDescription.getAttribute("value"));
-        Thread.sleep(1000);
-        Assert.assertFalse(pages.invoicingPage.productDescription.isDisplayed());
-        Assert.assertFalse(pages.invoicingPage.productUnitPrice.isDisplayed());
-        Assert.assertFalse(pages.invoicingPage.productQuantity.isDisplayed());
-        Assert.assertFalse(pages.invoicingPage.productAmount.isDisplayed());
+        Thread.sleep(2000);
+
+        Assert.assertFalse(pages.invoicingPage.elementDisplayed(pages.invoicingPage.productDescription));
+        Assert.assertFalse(pages.invoicingPage.elementDisplayed(pages.invoicingPage.productUnitPrice));
+        Assert.assertFalse(pages.invoicingPage.elementDisplayed(pages.invoicingPage.productQuantity));
+        Assert.assertFalse(pages.invoicingPage.elementDisplayed(pages.invoicingPage.productDescription));
+        Assert.assertFalse(pages.invoicingPage.elementDisplayed(pages.invoicingPage.productAmount));
+
+
         extentLogger.info("Passed- -  by clicking delete button , all product information returns to blank ");
     }
 
