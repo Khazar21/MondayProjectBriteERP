@@ -147,14 +147,113 @@ public class ConfigurationPage {
     @FindBy(xpath = "//button[contains(text(),'Action')]")
     public WebElement actionDropdown;
 
+
     @FindBy(xpath = "//a[@data-index='4']")
     public WebElement unpaidInvoicesInActDropdown;
 
     @FindBy(xpath = "//div[@name='partner_id']//input[@type='text']")
     public WebElement vendorDropdwnInActDropdown;
 
-    @FindBy(xpath = "//div[@name='partner_id']//input[@type='text']")
-    public WebElement ACDvendorDropdwnInActDropdown;
+    @FindBy(xpath = "//li[@class='ui-menu-item']/a")
+    public WebElement firstElementInACDvendorDrp;
+
+    @FindBy(xpath = "//li[@class='o_m2o_dropdown_option ui-menu-item'][2]")
+    public WebElement createAndEditInVendor;
+
+    @FindBy(xpath = "//div[@class='o_radio_item']//input[@data-value='company']")
+    public WebElement companyInEditInVendor;
+
+    @FindBy(xpath = "//div[@class='oe_title']/h1/input")
+    public WebElement nameInEditInVendor;
+
+    @FindBy(xpath = "//input[@name='street']")
+    public WebElement street_Create_Vendor;
+
+    @FindBy(xpath = "//input[@name='street2']")
+    public WebElement street2_Create_Vendor;
+
+    @FindBy(xpath = "//input[@name='city']")
+    public WebElement city_Create_Vendor;
+
+    @FindBy(xpath = "//input[@placeholder='State']")
+    public WebElement state_Create_Vendor;
+
+//    @FindBy(xpath = "/html[1]/body[1]/ul[12]/li[9]")
+//    public WebElement createAndEditState_Create_Vendor;
+//
+//    @FindBy(xpath = "//table[@class='o_group o_inner_group']//input[@name='name']")
+//    public WebElement stateNameAdd_Create_Vendor;
+//
+//    @FindBy(xpath = "//table[@class='o_group o_inner_group']//input[@name='code']")
+//    public WebElement stateCodeAdd_Create_Vendor;
+
+    @FindBy(xpath = "//ul[12]//li[8]//a[1]")
+    public WebElement searchMore_Create_Vendor;
+
+    @FindBy(xpath = "//ul[13]//li[8]//a[contains(text(),'Search More')]")
+    public WebElement searchMoreCountry_Create_Vendor;
+
+    @FindBy(xpath = "//div[@class='o_searchview']//input[@placeholder='Search...']")
+    public WebElement searchBoxInput_Create_Vendor;
+
+    @FindBy(xpath = "//tbody[@class='ui-sortable']//tr[@class='o_data_row']")
+    public WebElement applySearch_Create_Vendor;
+
+    @FindBy(xpath = "//td[@class='o_data_cell o_required_modifier']")
+    public WebElement countryModifyInSearchBox_Create_Vendor;
+
+    @FindBy(xpath = "//input[@placeholder='Country']")
+    public WebElement selectingToCountry_Create_Vendor;
+
+    @FindBy(xpath = "//ul[25]//li[4]")
+    public WebElement countryAdd_Create_Vendor;
+
+    @FindBy(xpath = "(//span[contains(text(),'Save')])[2]")
+    public WebElement saveInCreateStateCodeAdd_Create_Vendor;
+
+    @FindBy(xpath = "//input[@placeholder='Tags...']")
+    public WebElement tagsAdd_Create_Vendor;
+
+    @FindBy(xpath = "//input[@name='phone']")
+    public WebElement phoneAdd_Create_Vendor;
+
+    @FindBy(xpath = "//input[@name='mobile']")
+    public WebElement mobileAdd_Create_Vendor;
+
+    @FindBy(xpath = "//input[@name='email']")
+    public WebElement emailAdd_Create_Vendor;
+
+    @FindBy(xpath = "//input[@name='website']")
+    public WebElement websiteAdd_Create_Vendor;
+
+    @FindBy(xpath = "//span[contains(text(),'Save')]")
+    public WebElement saveIn_Create_Vendor;
+
+    @FindBy(xpath = "//div[@class='o_form_buttons_edit']//button[@type='button'][contains(text(),'Save')]")
+    public WebElement saveInUnpaidInvoices_Create_Vendor;
+
+
+
+
+
+
+    @FindBy(xpath = "//input[@name='phone']")
+    public WebElement PhoneAdd_Create_Vendor;
+
+
+
+
+
+
+    @FindBy(xpath = "//input[@placeholder='Company']")
+    public WebElement companyPlaceHolder;
+
+
+
+
+
+
+
 
 }
 
